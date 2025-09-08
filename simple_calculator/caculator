@@ -1,0 +1,53 @@
+def calculate(a,op,b):
+    a,b =float(a),float(b)
+    if op == '+':
+        return a+b
+    elif op == '-':
+        return a-b
+    elif op == '*':
+        return a*b
+    elif op == '/':
+        if b == 0:
+            print("Cannot devide bt zero..")
+            return a
+        else:
+            return a/b
+    else:
+        print("Invalid operator")
+        return a
+    
+def farewell():
+    print("\nThanks for using this calculater..\nhave a good day.....")
+        
+print("\nType '!' anytime to quit..\n")
+a = (input("Enter first number : "))
+if a == '!':
+    farewell()
+    exit()
+op = input("Enter which operation to perform (+,-,*,/) : ")
+if op == '!':
+    farewell()
+    exit()
+
+res = None
+while True:
+    if res == None:
+        b = (input("Enter second number "))
+        if b =='!':
+            farewell()
+            break
+        res = calculate(a,op,b)
+        print("= ",res)
+    else:
+        op = input("Enter which operation to perform (+,-,*,/) : ")
+        if op =='!':
+            farewell()
+            break
+        c = (input("Enter another number : "))
+        if c =='!':
+            farewell()
+            break
+        res = calculate(res,op,c)
+        print("= ",res)
+        
+
